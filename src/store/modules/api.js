@@ -4,17 +4,18 @@ export default {
   actions: {
     async getDaily(context) {
       await axios
-        .get(`${this.state.link}/daily`)
+        .get(`${import.meta.env.VITE_API_URL}/daily`)
         .then(res =>
           context.commit('updateDaily', JSON.parse(res.data[0].valute)),
         );
     },
     async getCurrency(context) {
+      let data = {};
       await axios
-        .get(`${this.state.link}/currency`)
-        .then(res =>
-          context.commit('updateCurrency', JSON.parse(res.data[0].rate)),
-        );
+        .get(`${import.meta.env.VITE_API_URL}/currency`)
+        .then(res => (data = JSON.parse(res.data[0].rate)));
+      data.RUB = 1;
+      context.commit('updateCurrency', data);
     },
   },
   mutations: {

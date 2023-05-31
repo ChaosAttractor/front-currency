@@ -16,8 +16,8 @@
             <td>{{ item.Nominal }}</td>
             <td>{{ item.Name }}</td>
             <td class="flex flex-center" style="gap: 5px">
-              {{ item.Value
-              }}<StonksIcon :value="item.Value" :previous="item.Previous" />
+              {{ item.Value }}
+              <StonksIcon :value="item.Value" :previous="item.Previous" />
             </td>
           </tr>
         </tbody>
