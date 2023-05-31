@@ -2,6 +2,7 @@
 node_modules
 /dist
 /dist_dev
+/.yarn
 
 
 # local env files

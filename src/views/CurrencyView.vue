@@ -1,18 +1,16 @@
 <template>
   <div>
-    <img
-      alt="Vue logo"
-      src="../assets/logo.png"
-    />
+    {{ getterCurrency }}
   </div>
 </template>
 
 <script>
-
+import { mapActions, mapGetters } from 'vuex';
 export default {
-  name: 'Home',
-
-  components: {
+  computed: mapGetters(['getterCurrency']),
+  methods: mapActions(['getCurrency']),
+  mounted() {
+    this.getCurrency();
   },
 };
 </script>

@@ -1,32 +1,14 @@
-// import Vuex from 'vuex'
-//
-//
-// Vue.use(Vuex);
-//
-// let store = new Vuex.Store({
-//   // actions: {
-//   //   async getCurrency(context) {
-//   //     try {
-//   //       const { data } = await axios.get(`http://localhost:3000/currency`);
-//   //       context.commit('updateCurrency', data);
-//   //     } catch (err) {
-//   //       console.log(err);
-//   //     }
-//   //   },
-//   //
-//   //   mutations: {
-//   //     updateCurrency(state, data) {
-//   //       state.currency = data;
-//   //     },
-//   //   },
-//   //   state: {
-//   //     currency: [],
-//   //   },
-//   //   getters: {
-//   //     currency(state) {
-//   //       return state.currency;
-//   //     },
-//   //   },
-// });
+import Vue from 'vue';
+import VueX from 'vuex';
+import api from './modules/api';
 
-// export default store;
+Vue.use(VueX);
+
+export default new VueX.Store({
+  state: {
+    link: 'http://localhost:3000',
+  },
+  modules: {
+    api,
+  },
+});
