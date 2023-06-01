@@ -10,7 +10,7 @@ const routes = [
     component: Base,
     children: [
       {
-        path: "/",
+        path: "*",
         name: "Currency",
         component: () => import("@/views/CurrencyView.vue"),
       },

@@ -30,7 +30,6 @@ export default {
     return {
       firstValute: 0,
       firstValuteAbbr: 'RUB',
-      secondValute: 0,
       secondValuteAbbr: 'USD',
     };
   },
