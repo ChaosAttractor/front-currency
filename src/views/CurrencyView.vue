@@ -1,31 +1,15 @@
 <template>
   <div class="flex container">
-    <div class="flex items-center">
-      <v-text-field v-model="firstValute"></v-text-field>
-      <v-select
-        v-model="firstValuteAbbr"
-        :items="keyCurrency"
-        label="Валюта 1"
-      ></v-select>
-    </div>
-    <div class="flex items-center">
-      <v-text-field
-        v-model="result"
-        readonly
-        hint="нельзя изменить"
-      ></v-text-field>
-      <v-select
-        v-model="secondValuteAbbr"
-        :items="keyCurrency"
-        label="Валюта 2"
-      ></v-select>
-    </div>
+  <Valute @inputValue="firstValute=$event" @changeAbbr="firstValuteAbbr=$event" :value="firstValute" :abbr="firstValuteAbbr" hint="" :readonly="false" :items="keyCurrency" :label="'Валюта 1'"/>
+  <Valute @changeAbbr="secondValuteAbbr=$event" :value="result" :abbr="secondValuteAbbr" :hint="'нельзя изменить'" :readonly="true" :items="keyCurrency" :label="'Валюта 2'"/>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import Valute from "../components/Valute.vue"
 export default {
+  components: { Valute },
   data() {
     return {
       firstValute: 0,
@@ -73,10 +57,6 @@ export default {
 <style scoped>
 .v-input {
   width: 100px;
-}
-
-.items-center {
-  align-items: center;
 }
 
 .container {
