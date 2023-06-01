@@ -15,14 +15,14 @@ const routes = [
         component: () => import("@/views/CurrencyView.vue"),
       },
       {
-        path: "*",
-        name: "CurrencyRedirect",
-        component: () => import("@/views/CurrencyView.vue"),
-      },
-      {
         path: "/daily",
         name: "Daily",
         component: () => import("@/views/DailyView.vue"),
+      },
+      {
+        path: "/*",
+        name: "CurrencyRedirect",
+        component: () => import("@/views/CurrencyView.vue"),
       },
     ],
   },
