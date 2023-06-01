@@ -10,7 +10,7 @@ const routes = [
     component: Base,
     children: [
       {
-        path: "*",
+        path: "/",
         name: "Currency",
         component: () => import("@/views/CurrencyView.vue"),
       },
@@ -18,6 +18,11 @@ const routes = [
         path: "/daily",
         name: "Daily",
         component: () => import("@/views/DailyView.vue"),
+      },
+      {
+        path: "/*",
+        name: "CurrencyRedirect",
+        component: () => import("@/views/CurrencyView.vue"),
       },
     ],
   },
