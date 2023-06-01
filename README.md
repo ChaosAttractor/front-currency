@@ -1,15 +1,18 @@
-# template-vite-vue2-vuetify
+# front-currency
 
-`Vite + Vue 2 + Vuex + Vue Router + Vuetify`
 
-## Start
+## Команды для запуска
 
-```bash
-npx degit slime7/template-vite-vue2-vuetify my-project
+установка зависимостей
+```
+yarn
+```
+запуск в режиме разработки
+```
+yarn dev
 ```
 
-```bash
-yarn dev # start dev server
-yarn build # build for production
-yarn serve # locally preview production build
+также создайте ```.env``` файл в корневой папке проекта
+```
+VITE_API_URL=ссылка на бэк (http://********.***)
 ```
