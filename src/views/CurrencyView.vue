@@ -1,5 +1,8 @@
 <template>
+<!--  // todo i18n-->
+<!--  todo вынести в отдельный модуль по документации-->
   <div class="flex container">
+    {{ arr}}
     <div class="flex items-center">
       <v-text-field v-model="firstValute"></v-text-field>
       <v-select
@@ -14,6 +17,7 @@
         readonly
         hint="нельзя изменить"
       ></v-text-field>
+<!--      // todo v-model-->
       <v-select
         v-model="secondValuteAbbr"
         :items="keyCurrency"
@@ -26,6 +30,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 export default {
+  // todo в store
   data() {
     return {
       firstValute: 0,
@@ -35,14 +40,18 @@ export default {
   },
   computed: {
     ...mapGetters(['getterCurrency']),
+    // todo getter
     keyCurrency() {
       return Object.keys(this.getterCurrency);
     },
+    // todo поменять название
     arr() {
       return Object.entries(this.getterCurrency);
     },
     result() {
       let mult;
+      // todo map
+      // todo mutation
       for (let j of this.arr) {
         if (j.includes(this.firstValuteAbbr)) {
           mult = j[1];
@@ -70,6 +79,7 @@ export default {
 };
 </script>
 
+<!--// todo -->
 <style scoped>
 .v-input {
   width: 100px;

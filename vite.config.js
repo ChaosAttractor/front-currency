@@ -24,6 +24,7 @@ module.exports = {
       customComponentResolvers: [VuetifyResolver()],
     }),
   ],
+  // todo 3000
   server: {
     port: 5173,
   },

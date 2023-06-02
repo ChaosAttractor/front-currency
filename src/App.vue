@@ -2,6 +2,7 @@
   <router-view />
 </template>
 
+<!--// todo вынести в asset-->
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

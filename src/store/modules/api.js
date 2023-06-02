@@ -1,5 +1,7 @@
 import axios from "../../../axios"
 
+// todo причесать
+// todo pinia разбить на модули на option api
 export default {
   actions: {
     async getDaily(context) {

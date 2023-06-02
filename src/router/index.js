@@ -1,35 +1,36 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Base from "@/views/Layout/Base.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Base from '@/views/Layout/Base.vue';
 
+// todo отлинтить проект
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "",
+    path: '',
     component: Base,
     children: [
       {
-        path: "/",
-        name: "Currency",
-        component: () => import("@/views/CurrencyView.vue"),
+        path: '/',
+        name: 'Currency',
+        component: () => import('@/views/CurrencyView.vue'),
       },
       {
-        path: "/daily",
-        name: "Daily",
-        component: () => import("@/views/DailyView.vue"),
+        path: '/daily',
+        name: 'Daily',
+        component: () => import('@/views/DailyView.vue'),
       },
       {
-        path: "/*",
-        name: "CurrencyRedirect",
-        component: () => import("@/views/CurrencyView.vue"),
+        path: '/*',
+        name: 'CurrencyRedirect',
+        component: () => import('@/views/CurrencyView.vue'),
       },
     ],
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: import.meta.env.Base,
   routes,
 });

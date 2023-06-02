@@ -10,7 +10,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue'],
   settings: {
     'import/resolver': {
       alias: {
