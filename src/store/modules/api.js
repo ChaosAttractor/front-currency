@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from '../../../axios';
 
 export default {
   actions: {
     async getDaily(context) {
       await axios
-        .get(`${import.meta.env.VITE_API_URL}/daily`)
+        .get(`/daily`)
         .then(res =>
           context.commit('updateDaily', JSON.parse(res.data[0].valute)),
         );
@@ -12,7 +12,7 @@ export default {
     async getCurrency(context) {
       let data = {};
       await axios
-        .get(`${import.meta.env.VITE_API_URL}/currency`)
+        .get(`/currency`)
         .then(res => (data = JSON.parse(res.data[0].rate)));
       data.RUB = 1;
       context.commit('updateCurrency', data);
